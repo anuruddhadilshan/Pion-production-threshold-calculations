@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{amsmath}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 
 \title{Pion production threshold calculations}
 \author{Anuruddha Rathnayake}
@@ -176,10 +176,11 @@ The following figure:\ref{fig:table4 from GMn proposal} is pion production thres
 
 \begin{table}[h!]
     \centering
-    \resizebox{1.1\textwidth}{!}{
-    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \resizebox{1\textwidth}{!}{
+    \begin{tabular}{|p{2cm}|p{2cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
     \hline
-    Q$^2$ (GeV/c)$^2$ & $E_{beam}$ (GeV) & $\theta_e$ & $E^{max}_{\pi} (\gamma,\pi)$ (GeV) & $E^{max}_{\pi}(\gamma,2\pi)$ (GeV) & $E^{limit}_{\pi}(\gamma,\pi)$ (GeV) & $E^{min}_\gamma$ (GeV) \\
+    %Q$^2$ (GeV/c)$^2$ & $E_{beam}$ (GeV) & $\theta_e$ & $E^{max}_{\pi} (\gamma,\pi)$ (GeV) & $E^{max}_{\pi}(\gamma,2\pi)$ (GeV) & $E^{limit}_{\pi}(\gamma,\pi)$ (GeV) & $E^{min}_\gamma$ (GeV) \\
+    Q$^2$ \newline (GeV/c)$^2$ & $E_{beam}$ \newline (GeV) & $\theta_e$ & $E^{max}_{\pi}$ \newline $(\gamma,\pi)$ \newline (GeV) & $E^{max}_{\pi}$ \newline$(\gamma,2\pi)$ \newline(GeV) & $E^{limit}_{\pi}$ \newline$(\gamma,\pi)$ \newline(GeV) & $E^{min}_\gamma$ \newline(GeV) \\
     \hline
     3.5 & 4.4 & $32.5^o$ & 2.533 & 2.450 & 2.468 & 4.253 \\
     4.5 & 4.4 & $41.9^o$ & 1.997 & 1.931 & 1.960 & 4.253 \\
@@ -217,7 +218,32 @@ Now from equation \ref{equ: Mandelstam s in lab fram} and \ref{equ: Mandelstam s
   E^{min}_\gamma  = \frac{ \left(\sqrt{m_n^2 + |(\vec{P}^{limit}_{\pi^+})'|^2} + \sqrt{m^2_{\pi^+} + |(\vec{P}^{limit}_{\pi^+})'|^2})\right)^2 - m_p^2}{2m_p}
 \end{equation}
 
-\subsection{}
+\subsection{Threshold calculations for all the $G_M^n$ kinematic point parameters}
+
+As I get reasonable agreement with the original proposal, I am trusting that my formalism and calculation scripts are correct (but comments/suggestions are highly appreciated). Therefore, I am extending the calculation to the actual $G_M^n$ experiment's kinematic points. In addition to the above parameters, I am including the HCal angle and the expected $\pi^+$ polar angle for the reaction $\gamma(p,\pi^+)n$. When calculating the $\pi^+$ polar angle, I am assuming the photon energy to be equal to the beam energy. Therefore, we should see the $\pi^+$ spectrum starting at the given ``end-point" angle and spreading into larger angles(?). See table:\ref{Table: Threshold calculation results for the actual GMn kinematics} for my calculation results.
+
+\begin{table}[h!]
+    \centering
+    \resizebox{1\textwidth}{!}{
+    \begin{tabular}{|p{1.5cm}|p{2cm}|p{2cm}|p{1cm}|p{1cm}|p{1.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+    \hline
+    Kin num & Q$^2$ \newline (GeV/c)$^2$ & $E_{beam}$ \newline (GeV) & $\theta_e$ & HCal \newline angle & $\pi^+$ \newline end-point \newline angle \newline $\gamma(p,\pi^+)n$ & $E^{max}_{\pi}$ \newline $(\gamma,\pi)$ \newline (GeV) & $E^{max}_{\pi}$ \newline$(\gamma,2\pi)$ \newline(GeV) & $E^{limit}_{\pi}$ \newline$(\gamma,\pi)$ \newline(GeV) & $E^{min}_\gamma$ \newline(GeV) \\
+    \hline
+    SBS 4 & 3.0 & 3.7393 & 36.0 & 31.9 & 31.5 & 2.120 & 2.037 & 2.068 & 3.577 \\
+    SBS 8 & 4.5 & 5.9826 & 26.5 & 29.4 & 30.1 & 3.579 & 3.492 & 3.544 & 5.875 \\
+    \rowcolor{blue!20} SBS 9 & 4.5 & 4.0268 & 49.0 & 22.0 & 22.6 & 1.623 & 1.564 & 1.588 & 3.871 \\
+    SBS 14 & 7.5 & 5.9828 & 46.5 & 17.0 & 17.7 & 1.999 & 1.950 & 1.979 & 5.875 \\
+    SBS 7 & 10 & 7.9308 & 40.0 & 16.1 & 16.5 & 2.659 & 2.610 & 2.649 & 7.887 \\
+    SBS 11 & 13.6 & 9.889 & 42 & 13.3 & 12.8 & 2.662 & 2.623 & 2.662 & 9.890 \\
+    \hline
+    \end{tabular}
+    }
+    \caption{Threshold calculations for the actual $G_M^n$ experiment's kinematic points}
+    \label{Table: Threshold calculation results for the actual GMn kinematics}
+\end{table}
+
+I've highlighted the SBS 9 kinematic point which was suggested by Andrew to be used in our analysis. But looking at this table, it seems like we can use any kinematic point (maybe except SBS 11 as the end-point energy for the single pion production channel and $E^{limit}_{\pi}$ overlaps) for this analysis?. Please correct me if I am wrong.
+
 
 \end{document}
 
